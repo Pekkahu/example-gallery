@@ -347,4 +347,7 @@ class My_Second_Scene(Scene):
 
 <a>https://docs.manim.community/en/stable/reference/manim.mobject.graphing.coordinate_systems.CoordinateSystem.html#manim.mobject.graphing.coordinate_systems.CoordinateSystem.add_coordinates</a>
 
+> for logic read these 
+<a>https://docs.manim.community/en/stable/tutorials/building_blocks.html</a>
+
 
