@@ -159,6 +159,52 @@ class My_scenes(Scene):
         self.add(axes, graph, graph_label, axes_label, vertical_lines)
         
 ```
+### output
 ![My_scenes_ManimCE_v0 16 0 post0](https://user-images.githubusercontent.com/96633728/202268598-ce06444a-ed6b-40dc-a056-d89962cf9864.png)
 
+```python
+class LabelForDomain&Range(Scene):
+
+    def construct(self):
+        axes = Axes(
+            axis_config={'include_numbers': True, 'numbers_to_exclude': [0]},
+            x_range=[0, 11, ], 
+            y_range=[0, 11, ], 
+            x_length=7, 
+            y_length=7,
+            x_axis_config={'color': WHITE}, 
+            y_axis_config={'color': WHITE}, 
+        ) 
+        axes_label_for_x = axes.get_x_axis_label('time')
+        # adds a labels for Domain
+        axes_label_for_y = axes.get_y_axis_label('distance')
+        # adds a labels for Range
+        self.add(axes, axes_label_for_x, axes_label_for_y)
+```
+
+### output
+
+![My_Second_Scene_ManimCE_v0 16 0 post0](https://user-images.githubusercontent.com/96633728/202272197-f29215dd-e1fb-4251-9f8f-b2a7d0748dc6.png)
+
+> by default they are aligned at the tip of the graph we can align them by adding few more arrugments into the function
+
+```python
+class My_Second_Scene(Scene):
+
+    def construct(self):
+        axes = Axes(
+            axis_config={'include_numbers': True, 'numbers_to_exclude': [0]},
+            x_range=[0, 11, ], 
+            y_range=[0, 11, ], 
+            x_length=8, 
+            y_length=5.5,
+            x_axis_config={'color': WHITE}, 
+            y_axis_config={'color': WHITE}, 
+        ) 
+        # use these as template don't go deep in these it will work everywhere you want
+        axes_label_for_x = axes.get_x_axis_label('time', edge = DOWN, direction= DOWN, buff = 0.7)
+        axes_label_for_y = axes.get_y_axis_label('distance', edge = LEFT, direction = LEFT, buff = 0.01).rotate(90 * DEGREES)
+        self.add(axes, axes_label_for_x, axes_label_for_y)
+```
+![My_Second_Scene_ManimCE_v0 16 0 post0](https://user-images.githubusercontent.com/96633728/202275944-b707488b-1b03-44ee-bf8d-5437f084e37c.png)
 
