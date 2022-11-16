@@ -345,4 +345,6 @@ class My_Second_Scene(Scene):
 
 ![My_Second_Scene_ManimCE_v0 16 0 post0](https://user-images.githubusercontent.com/96633728/202282270-7c56e1aa-6d71-47fd-8f75-bb7ec6a21a2f.png)
 
+<a>https://docs.manim.community/en/stable/reference/manim.mobject.graphing.coordinate_systems.CoordinateSystem.html#manim.mobject.graphing.coordinate_systems.CoordinateSystem.add_coordinates</a>
+
 
