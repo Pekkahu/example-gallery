@@ -128,3 +128,37 @@ class My_scenes(Scene):
 
 ![My_scenes_ManimCE_v0 16 0 post0](https://user-images.githubusercontent.com/96633728/202244463-4186a9c4-be90-4029-a5bd-06808d3c87cd.png)
 
+```python
+from manim import *
+
+class My_scenes(Scene):
+    
+    def construct(self):
+        axes = Axes( 
+            
+            axis_config={'include_numbers': True, 'numbers_to_exclude': [0]},
+
+            x_range=[-8, 9, ], 
+            y_range=[-6, 7, ], 
+            x_length=8, 
+            y_length=8,
+            
+            x_axis_config={'color': ORANGE}, 
+            y_axis_config={'color': ORANGE}, 
+        ) 
+    
+        axes_label = axes.get_axis_labels(x_label='x', y_label='f(x)')
+        
+        graph = axes.plot(lambda x: 5*np.e ** (-x**2/2), x_range=[-5, 5], color=YELLOW) 
+        
+        graph_label = axes.get_graph_label(graph, label='e^{-x^2}', color=YELLOW, x_val=1,dot=False) 
+        # .get_vertical_lines_to_graph(function, x_range=[start, end point], num_lines=how many lines in between them, color)
+        vertical_lines = axes.get_vertical_lines_to_graph(
+            graph, x_range=[-1, 1], num_lines=10, color=BLUE
+        )
+        self.add(axes, graph, graph_label, axes_label, vertical_lines)
+        
+```
+![My_scenes_ManimCE_v0 16 0 post0](https://user-images.githubusercontent.com/96633728/202268598-ce06444a-ed6b-40dc-a056-d89962cf9864.png)
+
+
