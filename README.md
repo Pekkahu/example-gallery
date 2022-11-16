@@ -52,3 +52,8 @@ class My_scenes(Scene):
         # adds mobject in the scene
         self.add(axes, graph, graph_label, axes_label) 
 ```
+
+> output
+
+![My_scenes_ManimCE_v0 16 0 post0](https://user-images.githubusercontent.com/96633728/202218955-36dc5f48-bc9e-4f39-ab4b-7c6aca2be678.png)
+
