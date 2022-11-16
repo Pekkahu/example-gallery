@@ -83,6 +83,48 @@ class GetAreaExample(Scene):
                     )
         self.add(axes, graph, graph_label, axes_label, area)
 ```
+
 ### output
 ![GetAreaExample_ManimCE_v0 16 0 post0](https://user-images.githubusercontent.com/96633728/202234545-a2851a5b-c5e1-4647-a732-972eda9fe611.png)
+
+```python
+class My_scenes(Scene):
+    
+    def construct(self):
+        axes = Axes( 
+            
+            axis_config={'include_numbers': True, 'numbers_to_exclude': [0]},
+
+            x_range=[-8, 9, ], 
+            y_range=[-6, 7, ], 
+            x_length=8, 
+            y_length=8,
+            
+            x_axis_config={'color': ORANGE}, 
+            y_axis_config={'color': ORANGE}, 
+        ) 
+    
+        axes_label = axes.get_axis_labels(x_label='x', y_label='f(x)')
+        
+        graph = axes.plot(lambda x: 5*np.e ** (-x**2/2), x_range=[-5, 5], color=YELLOW) 
+        
+        graph_label = axes.get_graph_label(graph, label='e^{-x^2}', color=YELLOW, x_val=1,dot=False) 
+        # .coords_to_point() is method of axes Mobject which defines a point in axes plane.
+        point = axes.coords_to_point(1, np.e**((-1)**2))
+        # these methods does'nt output any mobject just stores cordinate 
+        dot = Dot(point)
+        # here we have created a Mobject Dot which takes two arrugments x and y
+        # has 'point' stores the cordinates x and y hence we can use it to creat a vertical line 
+        # because we can do it directly by 'Dot' but .get_vertical_line() does'nt accept Dot as arrugment it only 
+        # takes coordinates of point in the graph or the Instance of graph is nesscarry 
+        # which we have used in point varaible      
+        line = axes.get_vertical_line(point)
+        # makes a line from x axis to the given point
+        # defaulty it creats a dotted line
+        self.add(axes, graph, graph_label, axes_label, dot, line)
+```
+
+### output
+
+![My_scenes_ManimCE_v0 16 0 post0](https://user-images.githubusercontent.com/96633728/202244463-4186a9c4-be90-4029-a5bd-06808d3c87cd.png)
 
