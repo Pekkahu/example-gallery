@@ -163,6 +163,68 @@ class My_scenes(Scene):
 ![My_scenes_ManimCE_v0 16 0 post0](https://user-images.githubusercontent.com/96633728/202268598-ce06444a-ed6b-40dc-a056-d89962cf9864.png)
 
 ```python
+from manim import *
+
+class My_scenes(Scene):
+    
+    def construct(self):
+        axes = Axes( 
+            axis_config={'include_numbers': True, 'numbers_to_exclude': [0]},
+            x_range=[-8, 9, ], 
+            y_range=[-6, 7, ], 
+            x_length=8, 
+            y_length=8,
+            x_axis_config={'color': ORANGE}, 
+            y_axis_config={'color': ORANGE}, 
+        ) 
+        axes_label = axes.get_axis_labels(x_label='x', y_label='f(x)')
+        graph = axes.plot(lambda x: 5*np.e ** (-x**2/2), x_range=[-5, 5], color=YELLOW) 
+        graph_label = axes.get_graph_label(graph, label='e^{-x^2}', color=YELLOW, x_val=1,dot=False) 
+        # riemann rectangle approximation or integration
+        #.get_riemann_rectangles()takes few arguments
+        # first the graph which is ploted
+        # second start and end point
+        # width of the rectangle
+        # color of rectangle 
+        rectangles = axes.get_riemann_rectangles(
+            graph, x_range=[-9, 9], dx=0.15, color=RED
+        )
+        self.add(axes, graph, graph_label, axes_label, rectangles)
+```
+### output
+
+![My_scenes_ManimCE_v0 16 0 post0](https://user-images.githubusercontent.com/96633728/202288635-8dc1c779-8c03-479c-86c4-d0b9ad3d606a.png)
+
+```python
+from manim import *
+
+class My_scenes(Scene):
+    
+    def construct(self):
+        axes = Axes( 
+            axis_config={'include_numbers': True, 'numbers_to_exclude': [0]},
+            x_range=[-8, 9, ], 
+            y_range=[-6, 7, ], 
+            x_length=8, 
+            y_length=8,
+            x_axis_config={'color': ORANGE}, 
+            y_axis_config={'color': ORANGE}, 
+        ) 
+        axes_label = axes.get_axis_labels(x_label='x', y_label='f(x)')
+        graph = axes.plot(lambda x: 5*np.e ** (-x**2/2), x_range=[-5, 5], color=YELLOW) 
+        graph_label = axes.get_graph_label(graph, label='e^{-x^2}', color=YELLOW, x_val=1,dot=False) 
+        rectangles = axes.get_riemann_rectangles(
+            graph, x_range=[-9, 9], dx=0.60, color=RED
+        )
+        self.add(axes, graph, graph_label, axes_label, rectangles)
+```
+
+### output
+
+![My_scenes_ManimCE_v0 16 0 post0](https://user-images.githubusercontent.com/96633728/202288951-2a7c2cc6-3355-4276-ae97-d88445d87ca5.png)
+
+
+```python
 class LabelForDomain&Range(Scene):
 
     def construct(self):
