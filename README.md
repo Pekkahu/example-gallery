@@ -57,3 +57,32 @@ class My_scenes(Scene):
 
 ![My_scenes_ManimCE_v0 16 0 post0](https://user-images.githubusercontent.com/96633728/202218955-36dc5f48-bc9e-4f39-ab4b-7c6aca2be678.png)
 
+```python
+class GetAreaExample(Scene):
+    
+    def construct(self):
+        axes = Axes( 
+            axis_config={'include_numbers': True, 'numbers_to_exclude': [0]},
+            x_range=[-8, 9, ], 
+            y_range=[-6, 7, ], 
+            x_length=8, 
+            y_length=8,
+            x_axis_config={'color': ORANGE}, 
+            y_axis_config={'color': ORANGE}, 
+        ) 
+        axes_label = axes.get_axis_labels(x_label='x', y_label='f(x)')
+        graph = axes.plot(lambda x: 5*np.e ** (-x**2/2), x_range=[-5, 5], color=YELLOW) 
+        graph_label = axes.get_graph_label(graph, label='e^{-x^2}', color=YELLOW, x_val=1,dot=False) 
+        # .get_area() takes the area covered by the curve or fuction from one point on x to another point of x 
+        # these creates a mobject within the region which can have properties and animation based on the use 
+        area = axes.get_area(
+                        graph,
+                        x_range=(-5, 5),
+                        color=(YELLOW),
+                        opacity=0.20,
+                    )
+        self.add(axes, graph, graph_label, axes_label, area)
+```
+### output
+![GetAreaExample_ManimCE_v0 16 0 post0](https://user-images.githubusercontent.com/96633728/202234545-a2851a5b-c5e1-4647-a732-972eda9fe611.png)
+
