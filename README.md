@@ -237,5 +237,26 @@ class My_Second_Scene(Scene):
 
 ![My_Second_Scene_ManimCE_v0 16 0 post0](https://user-images.githubusercontent.com/96633728/202278723-5c7428e2-7c33-4801-b439-359fcde7284a.png)
 
+```python
+class My_Second_Scene(Scene):
 
+    def construct(self):
+        axes = Axes(
+            axis_config={'include_numbers': True, 'numbers_to_exclude': [0]},
+            x_range=[-10, 11, ], 
+            y_range=[-4, 5], 
+            x_length=13, 
+            y_length=7,
+            x_axis_config={'color': WHITE}, 
+            y_axis_config={'color': WHITE}, 
+        ) 
+        graph = axes.plot(lambda x : np.sin(x), x_range = [-9, 9], color=YELLOW)
+        # graphs derivative of a function
+        graph2 = axes.plot_derivative_graph(graph, color=RED)
+        self.add(axes, graph, graph2)
+```
+
+### output
+
+![My_Second_Scene_ManimCE_v0 16 0 post0](https://user-images.githubusercontent.com/96633728/202281475-59bcb4f9-6f61-41ea-b861-74041e43f978.png)
 
