@@ -206,5 +206,36 @@ class My_Second_Scene(Scene):
         axes_label_for_y = axes.get_y_axis_label('distance', edge = LEFT, direction = LEFT, buff = 0.01).rotate(90 * DEGREES)
         self.add(axes, axes_label_for_x, axes_label_for_y)
 ```
+
+### output
+
 ![My_Second_Scene_ManimCE_v0 16 0 post0](https://user-images.githubusercontent.com/96633728/202275944-b707488b-1b03-44ee-bf8d-5437f084e37c.png)
+
+```python
+class My_Second_Scene(Scene):
+
+    def construct(self):
+        axes = Axes(
+            axis_config={'include_numbers': True, 'numbers_to_exclude': [0]},
+            x_range=[0, 11, ], 
+            y_range=[0, 11, ], 
+            x_length=8, 
+            y_length=5.5,
+            x_axis_config={'color': WHITE}, 
+            y_axis_config={'color': WHITE}, 
+        ) 
+        graph = axes.plot(lambda x: x/2, x_range=[0, 9], color=BLUE)
+        # same way as before it does'nt gives an Mobject but only the cordinates
+        # but it is easier then previous methode for specially for graphs because the y value is calculated by the program.
+        at_8point = axes.input_to_graph_point(8, graph)
+        # created a Mobject to display the position
+        dot = Dot(at_8point)
+        self.add(axes, graph, dot)
+```
+
+### output
+
+![My_Second_Scene_ManimCE_v0 16 0 post0](https://user-images.githubusercontent.com/96633728/202278723-5c7428e2-7c33-4801-b439-359fcde7284a.png)
+
+
 
