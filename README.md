@@ -345,6 +345,51 @@ class My_Second_Scene(Scene):
 
 ![My_Second_Scene_ManimCE_v0 16 0 post0](https://user-images.githubusercontent.com/96633728/202282270-7c56e1aa-6d71-47fd-8f75-bb7ec6a21a2f.png)
 
+```python
+class Example(Scene):
+        def construct(self):
+            # NumberPlane() 
+            axes1 = NumberPlane(
+                # these first number in list says where to start
+                # second number in list says where it should'nt reach 
+                # and third number in list says by what value it should step(default value is one)
+                x_range=[-10, 11], 
+                y_range=[-4, 5], 
+                # decides what lenght or space it takes in scene
+                x_length=13, 
+                y_length=7,
+                # colors the main axis of the graph or domain and range line.
+                x_axis_config={'color': WHITE}, 
+                y_axis_config={'color': WHITE}, 
+                background_line_style ={
+                    # grid line color
+                    "stroke_color": BLUE_D,
+                    # width of the grid 
+                    "stroke_width": 1,
+                    # opacity of grid from 0 to 1 (floating value)
+                    "stroke_opacity": 1
+                }
+            )
+            axes = Axes(
+            axis_config={'include_numbers': True, 'numbers_to_exclude': [0]},
+            x_range=[-10, 11], 
+            y_range=[-4, 5], 
+            x_length=13, 
+            y_length=7,
+            x_axis_config={'color': WHITE}, 
+            y_axis_config={'color': WHITE}, 
+            ) 
+            graph = axes.plot(lambda x : np.sin(x), x_range = [-9, 9], color=YELLOW)
+            # graphs integral of a function it does'nt draws the area under curve
+            graph2 = axes.plot_antiderivative_graph(graph, color=RED)
+            self.add(axes, graph, graph2, axes1)
+```
+
+### output
+
+![Example_ManimCE_v0 16 0 post0](https://user-images.githubusercontent.com/96633728/202518366-3bf588cb-7c18-423c-bcf1-5311630d77b4.png)
+
+
 <a>https://docs.manim.community/en/stable/reference/manim.mobject.graphing.coordinate_systems.CoordinateSystem.html#manim.mobject.graphing.coordinate_systems.CoordinateSystem.add_coordinates</a>
 
 > for logic read these 
