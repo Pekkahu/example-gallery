@@ -387,6 +387,8 @@ class Example(Scene):
 
 ### output
 
+![Example_ManimCE_v0 16 0 post0](https://user-images.githubusercontent.com/96633728/202518366-3bf588cb-7c18-423c-bcf1-5311630d77b4.png)
+
 ```python
 class Example(Scene):
     def construct(self):
@@ -428,12 +430,7 @@ class Example(Scene):
 ```
 ### output 
 
-
 https://user-images.githubusercontent.com/96633728/202886444-5d660daa-941e-4b79-b263-9676cfdc493f.mp4
-
-
-
-![Example_ManimCE_v0 16 0 post0](https://user-images.githubusercontent.com/96633728/202518366-3bf588cb-7c18-423c-bcf1-5311630d77b4.png)
 
 
 <a>https://docs.manim.community/en/stable/reference/manim.mobject.graphing.coordinate_systems.CoordinateSystem.html#manim.mobject.graphing.coordinate_systems.CoordinateSystem.add_coordinates</a>
