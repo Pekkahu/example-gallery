@@ -441,6 +441,7 @@ class Example(Scene):
 
 ### output
 
+![Example](https://user-images.githubusercontent.com/96633728/202886987-4a137d78-99b1-45e0-8cc0-159669a6d418.gif)
 
 
 https://user-images.githubusercontent.com/96633728/202886926-a514d2a9-4df6-404f-9ff0-e1e6c8eadcf5.mp4
