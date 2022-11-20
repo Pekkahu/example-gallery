@@ -387,6 +387,52 @@ class Example(Scene):
 
 ### output
 
+```python
+class Example(Scene):
+    def construct(self):
+        axes = Axes( 
+            
+            axis_config={'include_numbers': True, 'numbers_to_exclude': [0]},
+
+            x_range=[-8, 9, ], 
+            y_range=[-6, 7, ], 
+            x_length=8, 
+            y_length=8,
+            
+            x_axis_config={'color': ORANGE}, 
+            y_axis_config={'color': ORANGE}, 
+        ) 
+    
+        axes_label = axes.get_axis_labels(x_label='x', y_label='f(x)')
+        
+        graph = axes.plot(lambda x: 5*np.e ** (-x**2/2), x_range=[-5, 5], color=YELLOW) 
+        
+        graph_label = axes.get_graph_label(graph, label='e^{-x^2}', color=YELLOW, x_val=1,dot=False) 
+        # .coords_to_point() is method of axes Mobject which defines a point in axes plane.
+        point = axes.coords_to_point(1, np.e**((-1)**2))
+        # these methods does'nt output any mobject just stores cordinate 
+        dot = Dot(point)
+        # here we have created a Mobject Dot which takes two arrugments x and y
+        # has 'point' stores the cordinates x and y hence we can use it to creat a vertical line 
+        # because we can do it directly by 'Dot' but .get_vertical_line() does'nt accept Dot as arrugment it only 
+        # takes coordinates of point in the graph or the Instance of graph is nesscarry 
+        # which we have used in point varaible      
+        line = axes.get_vertical_line(point)
+        # makes a line from x axis to the given point
+        # defaulty it creats a dotted line
+
+        self.add(axes, graph, axes_label, dot, line)
+        self.play(ApplyWave(graph_label))
+        self.wait()
+        self.play(ApplyWave(axes_label))
+```
+### output 
+
+
+https://user-images.githubusercontent.com/96633728/202886444-5d660daa-941e-4b79-b263-9676cfdc493f.mp4
+
+
+
 ![Example_ManimCE_v0 16 0 post0](https://user-images.githubusercontent.com/96633728/202518366-3bf588cb-7c18-423c-bcf1-5311630d77b4.png)
 
 
