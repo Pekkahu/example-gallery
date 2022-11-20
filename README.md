@@ -432,6 +432,20 @@ class Example(Scene):
 
 https://user-images.githubusercontent.com/96633728/202886444-5d660daa-941e-4b79-b263-9676cfdc493f.mp4
 
+```python
+class Example(Scene):
+    def construct(self):
+        hi = Tex("deafult").scale(6)
+        self.play(ApplyWave(hi))
+```
+
+### output
+
+
+
+https://user-images.githubusercontent.com/96633728/202886926-a514d2a9-4df6-404f-9ff0-e1e6c8eadcf5.mp4
+
+
 
 <a>https://docs.manim.community/en/stable/reference/manim.mobject.graphing.coordinate_systems.CoordinateSystem.html#manim.mobject.graphing.coordinate_systems.CoordinateSystem.add_coordinates</a>
 
