@@ -457,10 +457,10 @@ class Example(Scene):
         #  buff decides how much space will be there from the border of the Mobject to the Animation.
         self.play(Circumscribe(hi, buff = 1))
 ```
-> if we can add more parameters we can have more funcationality from these
-> color – The color of the surrounding shape.
-> run_time – The duration of the entire animation.
-> fade_in – Whether to make the surrounding shape to fade in. It will be drawn otherwise.
+> if we can add more parameters we can have more funcationality from these <br>
+> color – The color of the surrounding shape. <br>
+> run_time – The duration of the entire animation. <br>
+> fade_in – Whether to make the surrounding shape to fade in. It will be drawn otherwise. <br>
 > fade_out – Whether to make the surrounding shape to fade out. It will be undrawn otherwise.
 
 ### output
