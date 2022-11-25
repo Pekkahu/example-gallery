@@ -445,6 +445,24 @@ class Example(Scene):
 ![Example](https://user-images.githubusercontent.com/96633728/202886987-4a137d78-99b1-45e0-8cc0-159669a6d418.gif)
 
 
+```python
+class Example(Scene):
+    def construct(self):
+        hi = Tex("deafult").scale(6)
+        # Circumscribe function does'nt add text or Mobject by default it should be added manually before self.play...
+        self.add(hi)
+        # Circumscribe() adds a animating square around an mobject 
+        # first parameter name of the varaible Mobject which is been animated by default manim will be create a rectangle around the Mobject if the shape is not mentioned
+        # second shape can either Rectangle(default) or Circle.
+        #  buff decides how much space will be there from the border of the Mobject to the Animation.
+        self.play(Circumscribe(hi, buff = 1))
+```
+
+### output
+
+![Example](https://user-images.githubusercontent.com/96633728/203888406-77d2a113-5d22-4070-8c10-726821e69c2a.gif)
+
+
 <a>https://docs.manim.community/en/stable/reference/manim.mobject.graphing.coordinate_systems.CoordinateSystem.html#manim.mobject.graphing.coordinate_systems.CoordinateSystem.add_coordinates</a>
 
 > for logic read these 
