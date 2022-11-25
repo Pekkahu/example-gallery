@@ -510,7 +510,7 @@ class Example(Scene):
 
 ![Example (2)](https://user-images.githubusercontent.com/96633728/203910885-e716282d-a20a-4e9d-9515-e54f214e9ccf.gif)
 
-
+> flash() function only works on points soo even giving a rectangle will not give a flash from sides it will be from center of rectangle therefore avoid rectangles and only use Circle for flash animation
 
 <a>https://docs.manim.community/en/stable/reference/manim.mobject.graphing.coordinate_systems.CoordinateSystem.html#manim.mobject.graphing.coordinate_systems.CoordinateSystem.add_coordinates</a>
 
