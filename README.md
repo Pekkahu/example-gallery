@@ -512,6 +512,20 @@ class Example(Scene):
 
 > flash() function only works on points soo even giving a rectangle will not give a flash from sides it will be from center of rectangle therefore avoid rectangles and only use Circle for flash animation
 
+```python
+class Example(Scene):
+    def construct(self):
+        c = Dot()
+        self.add(c)
+        self.play(FocusOn(c))
+```
+> focus only takes a point and if a Mobject is based it takes its center to focus and wave is by deafault a circle and cannot be changed
+
+### output
+
+![Example (3)](https://user-images.githubusercontent.com/96633728/203912438-12ee65f7-37b0-4727-be15-515d2c18f35a.gif)
+
+
 <a>https://docs.manim.community/en/stable/reference/manim.mobject.graphing.coordinate_systems.CoordinateSystem.html#manim.mobject.graphing.coordinate_systems.CoordinateSystem.add_coordinates</a>
 
 > for logic read these 
