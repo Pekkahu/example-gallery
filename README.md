@@ -468,6 +468,23 @@ class Example(Scene):
 ![Example](https://user-images.githubusercontent.com/96633728/203888406-77d2a113-5d22-4070-8c10-726821e69c2a.gif)
 
 
+```python
+class Example(Scene):
+    def construct(self):
+        hi = Tex("deafult").scale(6)
+        a = NumberPlane()
+        # NumberPlane is added to properly give height and width for flash animation 
+        rectangle = Rectangle(height = 4.05, width = 10.69)
+        self.add(hi)
+        self.add(rectangle, a )
+        self.play(Circumscribe(hi, buff = 1, run_time=2))
+```
+
+### output
+
+![Example (1)](https://user-images.githubusercontent.com/96633728/203891168-1f2bdd48-cb12-496e-8ecf-65eff0369d16.gif)
+
+
 <a>https://docs.manim.community/en/stable/reference/manim.mobject.graphing.coordinate_systems.CoordinateSystem.html#manim.mobject.graphing.coordinate_systems.CoordinateSystem.add_coordinates</a>
 
 > for logic read these 
