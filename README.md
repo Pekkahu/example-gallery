@@ -484,6 +484,33 @@ class Example(Scene):
 
 ![Example (1)](https://user-images.githubusercontent.com/96633728/203891168-1f2bdd48-cb12-496e-8ecf-65eff0369d16.gif)
 
+```python
+class Example(Scene):
+    def construct(self):
+        hi = Tex("deafult").scale(4)
+        radius = 3
+        d = Circle(radius = 3)
+        self.add(hi)
+        self.play(Circumscribe(hi, Circle, buff = 0.01, run_time=2))
+        self.play(Flash(d, 
+            #lenght of the flash line 
+            line_length=1,
+            # number of flashes
+            num_lines=30, 
+            color=RED,
+            # flash_radius – The distance from point at which the flash lines start.
+            # factor + buff 
+            flash_radius=radius+SMALL_BUFF,
+            time_width=0.3, run_time=2,
+            # increase the aniation speed but not the run time
+            rate_func = rush_from
+            ))
+```
+### output
+
+![Example (2)](https://user-images.githubusercontent.com/96633728/203910885-e716282d-a20a-4e9d-9515-e54f214e9ccf.gif)
+
+
 
 <a>https://docs.manim.community/en/stable/reference/manim.mobject.graphing.coordinate_systems.CoordinateSystem.html#manim.mobject.graphing.coordinate_systems.CoordinateSystem.add_coordinates</a>
 
