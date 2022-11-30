@@ -525,6 +525,46 @@ class Example(Scene):
 
 ![Example (3)](https://user-images.githubusercontent.com/96633728/203912438-12ee65f7-37b0-4727-be15-515d2c18f35a.gif)
 
+```python
+class My_scenes(Scene):
+    
+    def construct(self):
+        axes = Axes( 
+            axis_config={'include_numbers': True, 'numbers_to_exclude': [0]},
+            x_range=[-8, 9, ], 
+            y_range=[-6, 7, ], 
+            x_length=8, 
+            y_length=8,
+            x_axis_config={'color': ORANGE}, 
+            y_axis_config={'color': ORANGE}, 
+        ) 
+        axes_label = axes.get_axis_labels(x_label='x', y_label='f(x)')
+        graph = axes.plot(lambda x: 5*np.e ** (-x**2/2), x_range=[-5, 5], color=YELLOW) 
+        graph_label = axes.get_graph_label(graph, label='e^{-x^2}', color=YELLOW, x_val=1,dot=False) 
+        # riemann rectangle approximation or integration
+        #.get_riemann_rectangles()takes few arguments
+        # first the graph which is ploted
+        # second start and end point
+        # width of the rectangle
+        # color of rectangle 
+        rectangles = axes.get_riemann_rectangles(
+            graph, x_range=[-5, 5], dx=0.15, color=RED
+        )
+        area = axes.get_area(
+                        graph,
+                        x_range=(-5, 5),
+                        color=(YELLOW),
+                        opacity=0.20,
+                    )
+        self.add(axes, graph, graph_label, axes_label) 
+        self.play(Create(rectangles))
+```
+> Create() function shows Incrementally show a VMobject.
+
+### output
+
+![My_scenes](https://user-images.githubusercontent.com/96633728/204870787-51c3e1dc-b995-46b0-a0a9-c4d2e6b84813.gif)
+
 
 <a>https://docs.manim.community/en/stable/reference/manim.mobject.graphing.coordinate_systems.CoordinateSystem.html#manim.mobject.graphing.coordinate_systems.CoordinateSystem.add_coordinates</a>
 
