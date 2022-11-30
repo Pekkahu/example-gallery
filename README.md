@@ -565,6 +565,47 @@ class My_scenes(Scene):
 
 ![My_scenes](https://user-images.githubusercontent.com/96633728/204870787-51c3e1dc-b995-46b0-a0a9-c4d2e6b84813.gif)
 
+```python
+class My_scenes(Scene):
+    
+    def construct(self):
+        axes = Axes( 
+            axis_config={'include_numbers': True, 'numbers_to_exclude': [0]},
+            x_range=[-8, 9, ], 
+            y_range=[-6, 7, ], 
+            x_length=8, 
+            y_length=8,
+            x_axis_config={'color': ORANGE}, 
+            y_axis_config={'color': ORANGE}, 
+        ) 
+        axes_label = axes.get_axis_labels(x_label='x', y_label='f(x)')
+        graph = axes.plot(lambda x: 5*np.e ** (-x**2/2), x_range=[-5, 5], color=YELLOW) 
+        graph_label = axes.get_graph_label(graph, label='e^{-x^2}', color=YELLOW, x_val=1,dot=False) 
+        # riemann rectangle approximation or integration
+        #.get_riemann_rectangles()takes few arguments
+        # first the graph which is ploted
+        # second start and end point
+        # width of the rectangle
+        # color of rectangle 
+        rectangles = axes.get_riemann_rectangles(
+            graph, x_range=[-5, 5], dx=1/4, color=RED
+        )
+        area = axes.get_area(
+                        graph,
+                        x_range=(-5, 5),
+                        color=(YELLOW),
+                        opacity=0.20,
+                    )
+        self.add(axes, graph, graph_label, axes_label) 
+        # Create() function shows Incrementally show a VMobject.
+        self.play(Create(rectangles, run_time = 3, rate_func=linear))
+        # Uncreate function removes inccrementally VMobject as per the Creation sequance.
+        self.play(Uncreate(rectangles))
+ ```
+ ### output
+ 
+ ![My_scenes (1)](https://user-images.githubusercontent.com/96633728/204874620-b60c0b0e-ef93-4f79-a6a6-904850227ce2.gif)
+
 
 <a>https://docs.manim.community/en/stable/reference/manim.mobject.graphing.coordinate_systems.CoordinateSystem.html#manim.mobject.graphing.coordinate_systems.CoordinateSystem.add_coordinates</a>
 
