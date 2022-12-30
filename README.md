@@ -606,6 +606,27 @@ class My_scenes(Scene):
  
  ![My_scenes (1)](https://user-images.githubusercontent.com/96633728/204874620-b60c0b0e-ef93-4f79-a6a6-904850227ce2.gif)
 
+```python
+from manim import *
+
+class My_scenes(MovingCameraScene):
+    
+    def construct(self):
+        self.camera.frame.save_state()
+        a = NumberPlane()
+        d1 = Dot().shift(RIGHT*4).shift(UP*2)
+        d2 = Dot().shift(LEFT*4).shift(DOWN*2)
+        self.add(a, d1, d2)
+        self.play(self.camera.frame.animate.move_to(d1).scale(0.5))
+        self.play(self.camera.frame.animate.move_to(d2))
+        self.play(self.camera.frame.animate.move_to(0))
+```
+> MovingCameraScene should be inheritated first for animating the frames of moving camera
+> specail note after some thing is scaled it does'nt scale back in that scene soo be carefull
+ 
+### output
+
+![ezgif com-gif-maker](https://user-images.githubusercontent.com/96633728/210108849-643b4c6d-0914-4846-ba77-ed7e337fcfed.gif)
 
 <a> https://eulertour.com/lab</a>
 
