@@ -629,7 +629,7 @@ class My_scenes(MovingCameraScene):
 ![ezgif com-gif-maker](https://user-images.githubusercontent.com/96633728/210108849-643b4c6d-0914-4846-ba77-ed7e337fcfed.gif)
 
 <a> https://eulertour.com/lab</a>
-
+<a>https://github.com/3b1b/manim/issues/655</a>
 <a>https://docs.manim.community/en/stable/reference/manim.mobject.graphing.coordinate_systems.CoordinateSystem.html#manim.mobject.graphing.coordinate_systems.CoordinateSystem.add_coordinates</a>
 
 > for logic read these 
