@@ -643,6 +643,23 @@ class My_scenes(Scene):
 ![Screenshot (116)](https://user-images.githubusercontent.com/96633728/224417471-5f89102f-be0d-4a8b-93a1-965fd42c1c64.png)
 ![Screenshot (118)](https://user-images.githubusercontent.com/96633728/224417563-a1e39eb3-58d7-4ac5-ac34-9393ce630c73.png)
 
+```python
+from manim import *
+from math import pi
+
+
+class My_scenes(Scene):
+    def construct(self):
+        circle = Circle(radius=2, stroke_color=GREY)
+        dot_1 = Dot(color=GREEN).move_to([2, 0, 0]).scale(0.5)
+        dot_1_text = Tex("(2,0)").scale(0.5).next_to(dot_1, RIGHT).set_color(BLUE)
+        dot_2 = Dot(color=GREEN).move_to([0, 2, 0]).scale(0.5)
+        dot_2_text = Tex("(0,2)").scale(0.5).next_to(dot_2, UP).set_color(BLUE)
+        arc = ArcBetweenPoints(start=2 * RIGHT, end=2 * UP, stroke_color=YELLOW)
+        self.add(circle, dot_1, dot_2, dot_1_text, dot_2_text)
+        self.play(Create(arc))
+```
+![ArcBetweenPointsExample-1_AdobeExpress](https://user-images.githubusercontent.com/96633728/224419748-a4ee622a-aa0e-4d99-8900-cae760b3fc26.gif)
 
 <a> https://eulertour.com/lab</a>
 <a>https://github.com/3b1b/manim/issues/655</a>
