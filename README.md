@@ -627,6 +627,22 @@ class My_scenes(MovingCameraScene):
 ### output
 
 ![ezgif com-gif-maker](https://user-images.githubusercontent.com/96633728/210108849-643b4c6d-0914-4846-ba77-ed7e337fcfed.gif)
+```python 
+from manim import *
+from math import pi
+
+
+class My_scenes(Scene):
+    def construct(self):
+        arc1 = Arc(radius=2, angle=pi, arc_center=[-4, 0.5, 0.],start_angle=90,stroke_width=22,stroke_color=BLUE)
+        self.add(arc1)
+```
+### output
+![My_scenes_ManimCE_v0 17 2](https://user-images.githubusercontent.com/96633728/224417359-26f9cee6-a1b6-4d65-9876-c1cf5413ef1a.png)
+![Screenshot (117)](https://user-images.githubusercontent.com/96633728/224417415-f5e888b6-ce79-4850-a11a-429320aefd59.png)
+![Screenshot (116)](https://user-images.githubusercontent.com/96633728/224417471-5f89102f-be0d-4a8b-93a1-965fd42c1c64.png)
+![Screenshot (118)](https://user-images.githubusercontent.com/96633728/224417563-a1e39eb3-58d7-4ac5-ac34-9393ce630c73.png)
+
 
 <a> https://eulertour.com/lab</a>
 <a>https://github.com/3b1b/manim/issues/655</a>
