@@ -660,6 +660,21 @@ class My_scenes(Scene):
         self.play(Create(arc))
 ```
 ![ArcBetweenPointsExample-1_AdobeExpress](https://user-images.githubusercontent.com/96633728/224419748-a4ee622a-aa0e-4d99-8900-cae760b3fc26.gif)
+```python
+from manim import *
+from math import pi
+# manim -pql Manim_work_space.py My_scene
+
+class My_scenes(Scene):
+    def construct(self):
+        point1 = [4, 0, 0]
+        point2 = [-4, 0, 0]
+        ap1 = ArcPolygon(point1, point2, radius=7, fill_opacity=6, color=WHITE)
+        c = Circle(radius=1.25, color=BLUE, fill_opacity=6)
+        t = Triangle(color=BLACK, fill_opacity=7, stroke_color=PURPLE)
+        self.add(ap1, c, t)
+```
+![My_scenes_AdobeExpress](https://user-images.githubusercontent.com/96633728/224470742-a18ea6d9-184a-43c6-89a2-b6f2e2abfbe3.gif)
 
 <a> https://eulertour.com/lab</a>
 <a>https://github.com/3b1b/manim/issues/655</a>
