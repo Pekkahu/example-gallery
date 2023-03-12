@@ -706,7 +706,9 @@ class My_scenes(Scene):
         dot1 = Dot(point1)
         line2 = Line(dot, dot1)
         self.add(axes,axes_label,graph,dot,line,dot1,line2)
-```![My_scenes_ManimCE_v0 17 2](https://user-images.githubusercontent.com/96633728/224543935-f399f861-5d09-4594-b553-89bd5b173e86.png)
+```
+###output
+![My_scenes_ManimCE_v0 17 2](https://user-images.githubusercontent.com/96633728/224543935-f399f861-5d09-4594-b553-89bd5b173e86.png)
 
 
 <a> https://eulertour.com/lab</a>
