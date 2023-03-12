@@ -676,6 +676,39 @@ class My_scenes(Scene):
 ```
 ![My_scenes_AdobeExpress](https://user-images.githubusercontent.com/96633728/224470742-a18ea6d9-184a-43c6-89a2-b6f2e2abfbe3.gif)
 
+```python
+from manim import *
+from math import pi
+import numpy as np
+# manim -pql Manim_work_space.py My_scene
+x = np.linspace(0, 10, 10000)
+function_of_x = 1**2 - 3
+derivative_of_x = 2*1
+point_of_intersection = (1 - (function_of_x/derivative_of_x))
+
+class My_scenes(Scene):
+    def construct(self):
+        axes = Axes(
+            axis_config={'include_numbers': True, 'numbers_to_exclude': [0]},
+            x_range=[-6, 6, ],
+            y_range=[-6, 6, ],
+            x_length=6,
+            y_length=6,
+            x_axis_config={'color': ORANGE},
+            y_axis_config={'color': ORANGE},
+        )
+        axes_label = axes.get_axis_labels(x_label='x', y_label='f(x)')
+        graph = axes.plot(lambda x: x**2 - 3, x_range=[-3, 3], color=YELLOW)
+        point = axes.coords_to_point(1, 1**2 - 3)
+        dot = Dot(point)
+        line = axes.get_vertical_line(point)
+        point1 = axes.coords_to_point(point_of_intersection, 0)
+        dot1 = Dot(point1)
+        line2 = Line(dot, dot1)
+        self.add(axes,axes_label,graph,dot,line,dot1,line2)
+```![My_scenes_ManimCE_v0 17 2](https://user-images.githubusercontent.com/96633728/224543935-f399f861-5d09-4594-b553-89bd5b173e86.png)
+
+
 <a> https://eulertour.com/lab</a>
 <a>https://github.com/3b1b/manim/issues/655</a>
 <a>https://docs.manim.community/en/stable/reference/manim.mobject.graphing.coordinate_systems.CoordinateSystem.html#manim.mobject.graphing.coordinate_systems.CoordinateSystem.add_coordinates</a>
