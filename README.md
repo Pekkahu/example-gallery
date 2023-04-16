@@ -773,10 +773,19 @@ class My_scenes(ZoomedScene):
 ```
 ### output
 
-
-
 https://user-images.githubusercontent.com/96633728/224803715-b38c906c-eae5-4b25-9f64-6108f8b50cbf.mp4
 
+```python
+from manim import *
+# manim -pql Manim_work_space.py My_scene
+
+class My_scenes(Scene):
+    def construct(self):
+        func = lambda p: p[1]*LEFT + p[0]*UP
+        field = ArrowVectorField(func)
+        self.play(StreamLines(func).create())
+```
+>> output ![My_scenes_AdobeExpress (1)](https://user-images.githubusercontent.com/96633728/232303712-f98d7162-5bc5-4fac-830a-773cdc9e270f.gif)
 
 
 <a> https://eulertour.com/lab</a>
