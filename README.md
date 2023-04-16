@@ -785,7 +785,8 @@ class My_scenes(Scene):
         field = ArrowVectorField(func)
         self.play(StreamLines(func).create())
 ```
->> output ![My_scenes_AdobeExpress (1)](https://user-images.githubusercontent.com/96633728/232303712-f98d7162-5bc5-4fac-830a-773cdc9e270f.gif)
+> output 
+![My_scenes_AdobeExpress (1)](https://user-images.githubusercontent.com/96633728/232303712-f98d7162-5bc5-4fac-830a-773cdc9e270f.gif)
 
 
 <a> https://eulertour.com/lab</a>
