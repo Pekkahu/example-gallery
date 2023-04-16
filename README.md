@@ -785,6 +785,7 @@ class My_scenes(Scene):
         field = ArrowVectorField(func)
         self.play(StreamLines(func).create())
 ```
+<a> https://stackoverflow.com/questions/72311310/vector-fields-in-manim </a>
 > output 
 ![My_scenes_AdobeExpress (1)](https://user-images.githubusercontent.com/96633728/232303712-f98d7162-5bc5-4fac-830a-773cdc9e270f.gif)
 
