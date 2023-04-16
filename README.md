@@ -789,6 +789,21 @@ class My_scenes(Scene):
 > output 
 ![My_scenes_AdobeExpress (1)](https://user-images.githubusercontent.com/96633728/232303712-f98d7162-5bc5-4fac-830a-773cdc9e270f.gif)
 
+```python
+from manim import *
+# manim -pql Manim_work_space.py My_scene
+
+class My_scenes(Scene):
+    def construct(self):
+        func = lambda p: p[1]*LEFT + p[0]*UP
+        field = ArrowVectorField(func)
+        field2 = StreamLines(func)
+        field2.start_animation(warm_up=False, flow_speed=1.5)
+        self.play(FadeTransform(field2, field, stretch=False))
+```
+### output
+![My_scenes_AdobeExpress (2)](https://user-images.githubusercontent.com/96633728/232309530-23f0df94-c471-4cb4-aee4-945bdfc28de0.gif)
+
 
 <a> https://eulertour.com/lab</a>
 <a>https://github.com/3b1b/manim/issues/655</a>
